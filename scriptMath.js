@@ -59,9 +59,9 @@ const run = async () => {
       running = false
     }
   }
-  alert("Yor final score was " + score + " points!")
+  alert("Your final score was " + score + " points!")
   score = 0
-  scoreDisp.innerHTML = 0;
+  scoreDisp.innerHTML = "Your final score was " + score + " points!";
   first = 0;
   second = 0;
   disp.innerHTML = 60;
