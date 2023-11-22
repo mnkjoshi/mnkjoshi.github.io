@@ -2,8 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 
-import Root from './routes/root'
-import Index from '/routes/index'
+import Root from './routes/root.jsx'
+import Index from './routes/index.jsx'
 
 import {
   createBrowserRouter,
