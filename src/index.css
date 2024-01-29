@@ -1,0 +1,115 @@
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  font-family: 'Lexend', sans-serif;
+  /* Adjust the color to match the exact background of your image */
+  overflow-x: hidden;
+}
+
+p { 
+    margin: 0;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+
+.landing-main {
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(rgb(36, 36, 36), rgb(16, 15, 15));
+    align-items: center;
+    text-align: center;
+    z-index: 2;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+}
+
+.landing-central {
+    flex: 1;
+    text-align: left;
+    align-items: center;
+    justify-content: left;
+    display: flex;
+    flex-direction: row;
+    z-index: 3;
+    vertical-align: middle;
+    height: 100%;
+    position: absolute;
+    top:0%;
+    width: 100%;
+    container-type: inline-size;
+}
+
+.landing-welcome {
+    flex:1;
+    text-align: center;
+    align-items: center;
+    line-height: 100%;
+    vertical-align: middle;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 800;
+    /* 'uni_sansheavy_caps' */
+    font-size: 200%;
+    color: #7289DAff;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(10px);
+    vertical-align: middle;
+    height:20%;
+    container: landing-central;
+}
+
+@container (width > 400px) {
+    .landing-welcome {
+        font-size: 600%;
+    }
+}
+
+.landing-switches {
+    display: flex;
+    z-index: 10;
+    width: 18%;
+    margin-left: 0;
+    margin-top: 10%;
+    height: 60%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: end;
+    
+}
+
+
+.landing-toggle-1,
+.landing-toggle-2,
+.landing-toggle-3,
+.landing-toggle-4,
+.landing-toggle-5,
+.landing-toggle-6 {
+    background-color: transparent;
+    color: white;
+    border: none;
+    font-family: 'Lexend', sans-serif;
+    font-weight: 50;
+    font-size: 30px;
+    text-align: right;
+    align-items: end;
+    opacity: 0;
+    transition: 0.3s;
+    transform: translateX(-10px);
+}
+
+.landing-toggle-1:hover,
+.landing-toggle-2:hover,
+.landing-toggle-3:hover,
+.landing-toggle-4:hover,
+.landing-toggle-5:hover,
+.landing-toggle-6:hover {
+    color: #7289DAff;
+    cursor: pointer
+}
