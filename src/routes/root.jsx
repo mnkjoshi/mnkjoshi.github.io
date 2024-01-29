@@ -1,14 +1,55 @@
 import { useNavigate } from "react-router-dom";
 let shown = false;
+import Cookies from 'js-cookie';
 
 export default function Root() {  
 
-    if(shown) {
-
-    } else {
-        console.log("Go!")
-        shown = true;
+    if(Cookies.get('visited')) {
+        console.log("They've visited!")
         setTimeout(function() {
+            document.getElementById("landing-welcome").innerHTML = ""
+            document.getElementById("landing-welcome").style.opacity = 1;
+            document.getElementById("landing-welcome").style.transform = "translateY(-10px)";
+            document.getElementById("landing-welcome").style.transform = "translate(4.9%, -160%)";
+            document.getElementById("landing-welcome").style.textAlign = "left";
+            document.getElementById("landing-welcome").style["align-items"] = "start";
+        }, 10)
+        
+        setTimeout(function() { 
+            typer("Manav Joshi", 0)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-1").style.opacity = "1";
+                document.getElementById("landing-toggle-1").style.transform = "translateX(10px)";
+            }, 333)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-2").style.opacity = "1";
+                document.getElementById("landing-toggle-2").style.transform = "translateX(10px)";
+            }, 666)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-3").style.opacity = "1";
+                document.getElementById("landing-toggle-3").style.transform = "translateX(10px)";
+            }, 999)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-4").style.opacity = "1";
+                document.getElementById("landing-toggle-4").style.transform = "translateX(10px)";
+            }, 1333)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-5").style.opacity = "1";
+                document.getElementById("landing-toggle-5").style.transform = "translateX(10px)";
+            }, 1666)
+            setTimeout(function() {
+                document.getElementById("landing-toggle-6").style.opacity = "1";
+                document.getElementById("landing-toggle-6").style.transform = "translateX(10px)";
+            }, 1999)
+            setTimeout(function() {
+                document.getElementById("landing-welcome").style.transition = "0.5s";
+                document.getElementById("landing-welcome").style.color = "white";
+            }, 2000)
+        }, 1000)
+    } else {
+        setTimeout(function() {
+            console.log("Go!")
+            Cookies.set('visited', 'true')
             document.getElementById("landing-welcome").style.opacity = 1;
             document.getElementById("landing-welcome").style.transform = "translateY(-10px)";
             setTimeout(function() {
@@ -20,7 +61,7 @@ export default function Root() {
                         document.getElementById("landing-welcome").style.transform = "translate(-25%, -160%)";
                         setTimeout(function() {
                             document.getElementById("landing-welcome").style.transition = "0s";
-                            document.getElementById("landing-welcome").style.transform = "translate(4.8%, -160%)";
+                            document.getElementById("landing-welcome").style.transform = "translate(4.9%, -160%)";
                             document.getElementById("landing-welcome").style.textAlign = "left";
                             document.getElementById("landing-welcome").style["align-items"] = "start";
                            deleter(document.getElementById("landing-welcome").innerHTML.length);
@@ -29,31 +70,31 @@ export default function Root() {
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-1").style.opacity = "1";
                                     document.getElementById("landing-toggle-1").style.transform = "translateX(10px)";
-                                }, 333)
+                                }, 300)
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-2").style.opacity = "1";
                                     document.getElementById("landing-toggle-2").style.transform = "translateX(10px)";
-                                }, 666)
+                                }, 600)
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-3").style.opacity = "1";
                                     document.getElementById("landing-toggle-3").style.transform = "translateX(10px)";
-                                }, 999)
+                                }, 900)
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-4").style.opacity = "1";
                                     document.getElementById("landing-toggle-4").style.transform = "translateX(10px)";
-                                }, 1333)
+                                }, 1200)
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-5").style.opacity = "1";
                                     document.getElementById("landing-toggle-5").style.transform = "translateX(10px)";
-                                }, 1666)
+                                }, 1500)
                                 setTimeout(function() {
                                     document.getElementById("landing-toggle-6").style.opacity = "1";
                                     document.getElementById("landing-toggle-6").style.transform = "translateX(10px)";
-                                }, 1999)
+                                }, 1800)
                                 setTimeout(function() {
                                     document.getElementById("landing-welcome").style.transition = "0.5s";
                                     document.getElementById("landing-welcome").style.color = "white";
-                                }, 2000)
+                                }, 1300)
                             }, 1000)
                         }, 1000)
                     }, 1000)
