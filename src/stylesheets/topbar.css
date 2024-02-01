@@ -1,0 +1,226 @@
+
+.topbar-main {
+    display: flex;
+    align-items: center;
+    z-index: 1;
+    position: absolute;
+    top: 0px;
+    width: 100%;
+    background-color: transparent;
+    height: 6%;
+    justify-content: left;
+    margin-top: -6%;
+    transition: 0.3s;
+    z-index: 10;
+}
+  
+@media (width <= 750px) {
+    .topbar-main {
+        opacity: 0;
+    }
+}
+
+.topbar-logo {
+    height: 100%;
+}
+
+.topbar-title {
+    font-family: 'Lexend';
+    font-weight: 600;
+    font-size: 40px;
+    color: white;
+    margin-left: 10px;
+}
+
+.topbar-buttons {
+    display: flex;
+    flex-direction: row;
+    flex: 2;
+    height: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.topbar-button {
+    background-color: transparent;
+    border-radius: 8px;
+    color: white;
+    outline: none;
+    font-family: 'Lexend';
+    border: none;
+    font-weight: 600;
+    font-size: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.topbar-button:hover {
+    background-color: white;
+    color: black;
+    outline: none;
+    font-family: 'Lexend';
+    border: none;
+    font-weight: 600;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.topbar-divider {
+    width: 1px;
+    min-width: 1px;
+    height: 70%;
+    background-color: white;
+    margin-left: 4%;
+    margin-right: 4%;
+}
+
+.topbar-button-divider {
+    width: 0px;
+    height: 40%;
+    background-color: transparent;
+    border: none;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.topbar-toggles {
+    height: 90%;
+    flex: 0.4;
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    align-items: center;
+}
+
+.topbar-mode-toggle {
+    border-width: 2px;
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: 1%;
+    height: 100%;
+    margin-top: -2px;
+    border: none;
+}
+
+.topbar-mode-icon {
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    height: 100%;
+    transition: 0.3s;
+    border-width: 2px;
+    border-color: #000E1B;
+}
+
+.topbar-mode-icon:hover {
+    filter: invert(100%);
+    background-color: transparent;
+    border-width: 2px;
+    border-color: black;
+}
+
+.topbar-logout {
+
+    background-color: #ffffff;
+    color: #000E1B;
+    border-width: 2px;
+    border-color: #000E1B;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    margin-right: 20px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    height: 40px;
+}
+
+.topbar-logout:hover {
+    background-color: #000E1B;
+    color: #ffffff;
+    border-width: 2px;
+    border-color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    margin-right: 20px;
+}
+
+
+.mobilebar-main {
+    height: 10%;
+    width: 40%;
+    display: flex;
+    justify-content: right;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    bottom: 1%;
+    right: 1%;
+    z-index: 3;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.mobilebar-mode-toggle {
+    border-width: 2px;
+    cursor: pointer;
+    background-color: transparent;
+    margin-right: 5px;
+    height: 60%;
+    border: none;
+}
+
+.mobilebar-mode-icon {
+    background-color: #ffffff;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    height: 100%;
+    transition: 0.3s;
+    border-width: 2px;
+    border-color: #000E1B;
+}
+
+.mobilebar-mode-icon:hover {
+    filter: invert(100%);
+    background-color: transparent;
+    border-width: 2px;
+    border-color: black;
+}
+
+.mobilebar-logout {
+
+    background-color: #ffffff;
+    color: #000E1B;
+    border-width: 2px;
+    border-color: #000E1B;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    height: 60%;
+}
+
+.mobilebar-logout:hover {
+    background-color: #000E1B;
+    color: #ffffff;
+    border-width: 2px;
+    border-color: #ffffff;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 800;
+    border-radius: 8px;
+    transition: 0.3s;
+    border-style: solid;
+    margin-right: 20px;
+}
+

@@ -1,9 +1,20 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import './index.css'
+
+import './stylesheets/root.css'
+import './stylesheets/topbar.css'
+import './stylesheets/index.css'
+
 import "../src/assets/fonts/stylesheet.css"
+
 import Root from './routes/root.jsx'
 import Index from './routes/index.jsx'
+import ErrorPage from './routes/error.jsx'
+import Portal from './routes/portal.jsx'
+import Resume from './routes/resume.jsx'
+import Resources from './routes/resources.jsx'
+import Projects from './routes/projects.jsx'
+import Cyber from './routes/cyber.jsx'
 
 import {
   createBrowserRouter,
@@ -14,11 +25,31 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Root/> ,
-    // errorElement: <ErrorPage/>,
+    errorElement: <ErrorPage/>,
     children: [
       {
         index: true,
         element: <Index/>
+      },
+      {
+        path: "/projects",
+        element: <Projects/>
+      },
+      {
+        path: "/cyber",
+        element: <Cyber/>
+      },
+      {
+        path: "/resume",
+        element: <Resume/>
+      },
+      {
+        path: "/resources",
+        element: <Resources/>
+      },
+      {
+        path: "/portal",
+        element: <Portal/>
       },
     ]
   },
