@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import './stylesheets/root.css'
 import './stylesheets/topbar.css'
 import './stylesheets/index.css'
+import './stylesheets/projects.css'
 
 import "../src/assets/fonts/stylesheet.css"
 

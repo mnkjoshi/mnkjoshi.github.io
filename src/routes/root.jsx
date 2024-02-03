@@ -110,10 +110,10 @@ export default function Root() {
         if (currentRoute == Route && override == null) { return }
         switch (Route) {
             case -1:
-                navigate("/");
+                navigate("/", true);
                 break;
             case 1:
-                navigate("/");
+                navigate("/", true);
                 break;
             case 2:
                 navigate("/projects");
@@ -141,7 +141,6 @@ export default function Root() {
                 document.getElementById("landing-switches").style.width = "0%";
             }, 1000)
         } else if ((Route == 1 || Route == -1)  && device == 1) {
-            console.log(device)
             document.getElementById("landing-switches").style.transition = "0.3s";
             document.getElementById("landing-switches").style.width = "18%";
             activateToggles("1", dashBarTransition, 100);
