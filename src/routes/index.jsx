@@ -21,6 +21,7 @@ function typer(message, textTicker) {
 }
 function deleter(textTicker) {
     if(document.getElementById("index-description") == null) { return }
+    if(document.getElementById("index-ticker") == null) { return }
     document.getElementById("index-description").innerHTML = document.getElementById("index-description").innerHTML.substring(0, textTicker);
     if (textTicker > 0) {
         textTicker--;
@@ -39,7 +40,7 @@ function deleter(textTicker) {
 }
 
 
-export default function Index(given) {  
+export default function Index() {  
     setTimeout( function() {
         document.getElementById("index-content").style.opacity = "1";
         document.getElementById("index-content").style.transform = "translateY(10px)";

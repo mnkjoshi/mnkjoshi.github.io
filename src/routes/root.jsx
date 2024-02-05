@@ -1,10 +1,13 @@
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLocation } from "react-router-dom";
 let shown = false;
 import TopBar from "../components/TopBar";
 import MobileBar from "../components/MobileBar";
+import LoadingScreen from "../components/LoadingScreen"
+
 import Cookies from 'js-cookie';
 let currentRoute = 1;
 let device = 1;
+let transferring = false;
 import React, { useState } from 'react'
 
 function activateToggles(mode, direction, first) {
@@ -74,8 +77,8 @@ function deleter(textTicker) {
 
 export default function Root() {  
     const [status, setStatus] = useState(0);
-    const [target, setTarget] = useState(0);
-
+    const [first, setFirst] = useState(0);
+    let location = useLocation();
     const navigate = useNavigate();
     let dashBarTransition;
 
@@ -86,8 +89,17 @@ export default function Root() {
         dashBarTransition = "translateX(10px)"
         device = 1;
     }
-
     
+    if(first == 0) {
+        if (!(location.pathname == "/")) {
+            setTimeout(function() {
+                Navigation(1, true)
+                setFirst(1)
+            }, 100)
+        } else {
+            setFirst(1)
+        }
+    }
 
     if(status == 0 || status == 2) {
         setTimeout(function() {
@@ -108,53 +120,74 @@ export default function Root() {
     
     function Navigation(Route, override) {
         if (currentRoute == Route && override == null) { return }
-        switch (Route) {
-            case -1:
-                navigate("/", true);
-                break;
-            case 1:
-                navigate("/", true);
-                break;
-            case 2:
-                navigate("/projects");
-                break;
-            case 3:
-                navigate("/cyber");
-                break;
-            case 4:
-                navigate("/resume");
-                break;
-            case 5:
-                navigate("/resources");
-                break;
-            case 6:
-                navigate("/portal");
-                break;
+        let timeToWait = 500;
+        if (Route !== 1) { 
+            document.getElementById("landing-outlet").style.opacity = 0; 
+        } else { 
+            document.getElementById("landing-outlet").style.opacity = 1; 
+            timeToWait = 0 
         }
-        if (Route !== 1 && Route !== -1 && device == 1) {
-            activateToggles("0", dashBarTransition, 100);
-            deleter("Manav Joshi".length);
-            currentRoute = Route
-            setStatus(1);
-            setTimeout(function() { 
-                document.getElementById("landing-switches").style.transition = "0.3s";
-                document.getElementById("landing-switches").style.width = "0%";
-            }, 1000)
-        } else if ((Route == 1 || Route == -1)  && device == 1) {
-            document.getElementById("landing-switches").style.transition = "0.3s";
-            document.getElementById("landing-switches").style.width = "18%";
-            activateToggles("1", dashBarTransition, 100);
-            typer("Manav Joshi", 0);
-            currentRoute = 1    
-            setStatus(0);
-        } else if (Route !== 1 && Route !== -1 && device == 2) { // Mobile topbar
-            currentRoute = Route
-            setStatus(3)
-        } else if (Route == 1 || Route == -1  && device == 2) { // Mobile hide topbar
-            currentRoute = 1 
-            setStatus(2)
-            
-        }
+        setTimeout(function() {
+            switch (Route) {
+                case -1:
+                    navigate("/", true);
+                    break;
+                case 1:
+                    navigate("/", true);
+                    break;
+                case 2:
+                    navigate("/projects");
+                    break;
+                case 3:
+                    navigate("/cyber");
+                    break;
+                case 4:
+                    navigate("/resume");
+                    break;
+                case 5:
+                    navigate("/resources");
+                    break;
+                case 6:
+                    navigate("/portal");
+                    break;
+            }
+            if (Route !== 1 && Route !== -1 && device == 1) {
+                activateToggles("0", dashBarTransition, 100);
+                deleter("Manav Joshi".length);      
+                currentRoute = Route
+                transferring = true;
+                setTimeout(function() { 
+                    if (currentRoute !== 1) {
+                        document.getElementById("landing-switches").style.width = "0%";
+                    }
+                    document.getElementById("landing-outlet").style.opacity = 1;
+                    transferring = false;
+                }, 2000)
+            } else if ((Route == 1 || Route == -1)  && device == 1) {
+                transferring = false;
+                document.getElementById("landing-switches").style.width = "18%";
+                activateToggles("1", dashBarTransition, 100);
+                typer("Manav Joshi", 0);
+                currentRoute = 1    
+                setStatus(0);
+            } else if (Route !== 1 && Route !== -1 && device == 2) { // Mobile topbar
+                transferring = true;
+                currentRoute = Route
+                setStatus(3)
+                setTimeout(function() { 
+                    document.getElementById("landing-outlet").style.opacity = 1;
+                    transferring = false;
+                }, 2000)
+            } else if (Route == 1 || Route == -1  && device == 2) { // Mobile hide topbar
+                currentRoute = 1 
+                setStatus(2)
+                setTimeout(function() { 
+                    document.getElementById("landing-outlet").style.opacity = 1;
+                    transferring = false;
+                }, 2000)
+                
+            }
+        }, timeToWait)
     } //<TopBar HandleClick = {null}/>
     // if (target == 0) {
     //     setTimeout( function() {
@@ -169,6 +202,7 @@ export default function Root() {
             <div className= "landing-central">
                 <p className= "landing-welcome" id= "landing-welcome"></p>
             </div>
+            { transferring == true ? <LoadingScreen/> : null }
             { status == 0 ? <TopBar HandleClick = {null}/> : null } 
             { status == 1 ? <TopBar HandleClick = {Navigation}/> : null } 
             { status == 2 ? <MobileBar HandleClick = {Navigation} /> : null } 
@@ -193,7 +227,7 @@ export default function Root() {
                     Portal
                 </button> : null}
             </div>
-            <div className= "landing-outlet">
+            <div className= "landing-outlet" id= "landing-outlet">
                 <Outlet/>
             </div>
       </div>

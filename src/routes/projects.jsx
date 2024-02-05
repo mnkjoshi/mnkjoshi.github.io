@@ -17,7 +17,7 @@ export default function Projects() {
     return (
         <div className="projects-main">
             <p className= "projects-title">
-                SafetyVision
+                {"<Project Title>"}
             </p>
             
             <div className= "projects-slider">
@@ -38,11 +38,11 @@ export default function Projects() {
                 </button>
             </div>
             <div className= "project-actions">
-                
+                {"<Project Actions>"}
             </div>
             <p className= "projects-description">
-
+                {"<Project Description>"}
             </p>
         </div>
     );
-  }
+  } 
