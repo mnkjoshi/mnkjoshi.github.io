@@ -7,6 +7,12 @@ html {
   /* Adjust the color to match the exact background of your image */
   overflow-x: hidden;
   overflow-y: hidden;
+  
+}
+
+.html {
+    transition: 1s;
+    mix-blend-mode: difference;
 }
 
 p { 
@@ -34,8 +40,8 @@ p {
 
 .loading-container {
     margin-top: -5%;
-    width: 40%;
-    height: 40%;
+    width: 30%;
+    height: 30%;
     vertical-align: middle;
     display: flex;
     place-content: center;

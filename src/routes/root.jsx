@@ -78,6 +78,7 @@ function deleter(textTicker) {
 export default function Root() {  
     const [status, setStatus] = useState(0);
     const [first, setFirst] = useState(0);
+    const [movement, setMove] = useState(0);
     let location = useLocation();
     const navigate = useNavigate();
     let dashBarTransition;
@@ -105,6 +106,11 @@ export default function Root() {
         setTimeout(function() {
             document.getElementById("landing-welcome").style.opacity = 1;
             document.getElementById("landing-welcome").style["align-items"] = "start";
+            if (Cookies.get("darkOrLight") !== null) {
+                if (Cookies.get("darkOrLight") == "light") {
+                    document.getElementById("html").style["mix-blend-mode"] = "difference";
+                }
+            }
         }, 10)
         
         setTimeout(function() { 
@@ -120,6 +126,20 @@ export default function Root() {
     
     function Navigation(Route, override) {
         if (currentRoute == Route && override == null) { return }
+        console.log(Route)
+        if (Route == -2) {
+            console.log(document.getElementById("html").style["mix-blend-mode"])
+            if(document.getElementById("html").style["mix-blend-mode"] == "difference") {
+                document.getElementById("html").style["mix-blend-mode"] = "normal";
+                Cookies.set("darkOrLight", "dark")
+            } else {
+                document.getElementById("html").style["mix-blend-mode"] = "difference";
+                Cookies.set("darkOrLight", "light")
+            }
+            
+            return
+        }
+
         let timeToWait = 500;
         if (Route !== 1) { 
             document.getElementById("landing-outlet").style.opacity = 0; 
@@ -156,6 +176,11 @@ export default function Root() {
                 deleter("Manav Joshi".length);      
                 currentRoute = Route
                 transferring = true;
+                if (status == 1) {
+                    setMove(movement + 1);
+                } else {
+                    setStatus(1);
+                }
                 setTimeout(function() { 
                     if (currentRoute !== 1) {
                         document.getElementById("landing-switches").style.width = "0%";
@@ -179,6 +204,7 @@ export default function Root() {
                     transferring = false;
                 }, 2000)
             } else if (Route == 1 || Route == -1  && device == 2) { // Mobile hide topbar
+                transferring = false;
                 currentRoute = 1 
                 setStatus(2)
                 setTimeout(function() { 

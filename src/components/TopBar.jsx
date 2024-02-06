@@ -31,7 +31,7 @@ export default function TopBar({ HandleClick }) {
         <div className = "topbar-divider"></div>
         <div className = "topbar-toggles">
             
-            <button className = "topbar-mode-toggle"><img className = "topbar-mode-icon" src = {MoonIcon}/></button>
+            <button className = "topbar-mode-toggle"><img className = "topbar-mode-icon" src = {MoonIcon} onClick= {() => HandleClick(-2)}/></button>
             <button className = "topbar-logout"  onClick={() => HandleClick(1)}>Home</button>
         </div>
     </div>
