@@ -2,7 +2,7 @@ import { Outlet, useNavigate } from "react-router-dom";
 import MoonIcon from "../assets/images/MoonIcon.png"
 import GitHubIcon from "../assets/images/GitHubIcon.png"
 
-export default function MobileBar({ HandleClick }) {
+export default function IndexBar({ HandleClick }) {
     setTimeout( function() {
         if (HandleClick == null && document.getElementById("mobilebar-main").style.opacity == 1) {
             document.getElementById("mobilebar-main").style.opacity = "0"

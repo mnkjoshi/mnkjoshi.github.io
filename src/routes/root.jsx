@@ -3,6 +3,7 @@ let shown = false;
 import TopBar from "../components/TopBar";
 import MobileBar from "../components/MobileBar";
 import LoadingScreen from "../components/LoadingScreen"
+import IndexBar from "../components/IndexBar"
 
 import Cookies from 'js-cookie';
 let currentRoute = 1;
@@ -214,22 +215,17 @@ export default function Root() {
                 
             }
         }, timeToWait)
-    } //<TopBar HandleClick = {null}/>
-    // if (target == 0) {
-    //     setTimeout( function() {
-    //         Navigation(1, true);
-    //         setTarget(1)
-    //     }, 1000)
-    // }
+    }
+    
     return (
         <div className= "landing-main" id= "landing-main">
-            <div className= "animation-wrapper">
-            </div>
+
             <div className= "landing-central">
                 <p className= "landing-welcome" id= "landing-welcome"></p>
             </div>
             { transferring == true ? <LoadingScreen/> : null }
-            { status == 0 ? <TopBar HandleClick = {null}/> : null } 
+            { status == 0 ? <TopBar HandleClick = {null}/> : null} 
+            { status == 0 ? <IndexBar HandleClick={Navigation}/> : null}
             { status == 1 ? <TopBar HandleClick = {Navigation}/> : null } 
             { status == 2 ? <MobileBar HandleClick = {Navigation} /> : null } 
             { status == 3 ? <MobileBar HandleClick = {Navigation}/> : null } 
