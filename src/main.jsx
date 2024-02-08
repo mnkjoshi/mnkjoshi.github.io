@@ -5,6 +5,7 @@ import './stylesheets/root.css'
 import './stylesheets/topbar.css'
 import './stylesheets/index.css'
 import './stylesheets/projects.css'
+import './stylesheets/resume.css'
 
 import "../src/assets/fonts/stylesheet.css"
 
