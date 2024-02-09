@@ -127,9 +127,7 @@ export default function Root() {
     
     function Navigation(Route, override) {
         if (currentRoute == Route && override == null) { return }
-        console.log(Route)
         if (Route == -2) {
-            console.log(document.getElementById("html").style["mix-blend-mode"])
             if(document.getElementById("html").style["mix-blend-mode"] == "difference") {
                 document.getElementById("html").style["mix-blend-mode"] = "normal";
                 Cookies.set("darkOrLight", "dark")

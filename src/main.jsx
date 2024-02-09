@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 
 import './stylesheets/root.css'
 import './stylesheets/topbar.css'
-import './stylesheets/index.css'
+import './stylesheets/index.css'  
 import './stylesheets/projects.css'
 import './stylesheets/resume.css'
 
