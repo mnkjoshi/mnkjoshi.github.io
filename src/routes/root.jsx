@@ -135,7 +135,11 @@ export default function Root() {
                 document.getElementById("html").style["mix-blend-mode"] = "difference";
                 Cookies.set("darkOrLight", "light")
             }
-            
+            return
+        }
+
+        if (Route == -3) {
+            window.open("https://github.com/mnkjoshi")
             return
         }
 

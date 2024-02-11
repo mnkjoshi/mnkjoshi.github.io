@@ -1,4 +1,4 @@
-export default [
+export default [//[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, MongoIcon, FlaskIcon, ExpressIcon, JavaScriptIcon, VueIcon, ArduinoIcon, CIcon, CppIcon, HardwareIcon]
     //SafetyVision
     { 
     title: "SafetyVision",
@@ -86,6 +86,22 @@ export default [
             logo: 2,
             title: "Python",
         },
+        {
+            logo: 10,
+            title: "Arduino",
+        },
+        {
+            logo: 11,
+            title: "C",
+        },
+        {
+            logo: 12,
+            title: "C++",
+        },
+        {
+            logo: 13,
+            title: "Circuitry",
+        },
         ],
         live: null,
         yt: "https://youtu.be/aEbsAJDjvbE",
@@ -99,8 +115,20 @@ export default [
         description: "GamEE Lite is the ultimate handheld gaming console designed to democratize gaming. Built on Arduino technology, it offers affordability and accessibility for all. With a user-friendly platform, creators can easily learn to code and craft their own games, fostering creativity and skill development. GamEE Lite comes loaded with a variety of pre-installed games, ensuring instant entertainment out of the box. Its lightweight design and intuitive controls make it perfect for gamers of all ages and skill levels. Whether you're playing classics or creating your own adventures, GamEE Lite brings the joy of gaming to everyone, empowering creativity and exploration.",
         stack: [
         {
-            logo: 2,
-            title: "Python",
+            logo: 10,
+            title: "Arduino",
+        },
+        {
+            logo: 11,
+            title: "C",
+        },
+        {
+            logo: 12,
+            title: "C++",
+        },
+        {
+            logo: 13,
+            title: "Circuitry",
         },
         ],
         live: null,
@@ -114,10 +142,34 @@ export default [
         tagline: "Hack the Change 2023",
         description: "VitaliSee revolutionizes plant care with its intuitive web application. Seamlessly integrated with machine learning, it empowers users to detect diseases, monitor growth, and optimize water/fertilizer cycles for urban sustainability. Through a user-friendly interface, VitaliSee provides personalized feedback tailored to each plant's needs, enhancing care and fostering healthy growth. Its advanced algorithms analyze plant images to identify diseases early, enabling proactive management. With tracking features for growth and nutrient cycles, users gain insights to optimize resources and promote sustainable practices. VitaliSee is not just a tool; it's a green companion, nurturing plant health while contributing to a greener, more sustainable urban environment.",
         stack: [
-        {
-            logo: 2,
-            title: "Python",
-        },
+            {
+                logo: 0,
+                title: "React",
+            },
+            {
+                logo: 1,
+                title: "Firebase",
+            },
+            {
+                logo: 2,
+                title: "Python",
+            },
+            {
+                logo: 3,
+                title: "NodeJS",
+            },
+            {
+                logo: 4,
+                title: "Vite",
+            },
+            {
+                logo: 6,
+                title: "Flask",
+            },
+            {
+                logo: 8,
+                title: "JavaScript",
+            },
         ],
         live: null,
         yt: null,
@@ -128,12 +180,36 @@ export default [
         title: "UtiliSee",
         display: 5,
         tagline: "Second Place in Sustainable Cities Challenge 2023",
-        description: "VitaliSee revolutionizes plant care with its intuitive web application. Seamlessly integrated with machine learning, it empowers users to detect diseases, monitor growth, and optimize water/fertilizer cycles for urban sustainability. Through a user-friendly interface, VitaliSee provides personalized feedback tailored to each plant's needs, enhancing care and fostering healthy growth. Its advanced algorithms analyze plant images to identify diseases early, enabling proactive management. With tracking features for growth and nutrient cycles, users gain insights to optimize resources and promote sustainable practices. VitaliSee is not just a tool; it's a green companion, nurturing plant health while contributing to a greener, more sustainable urban environment.",
+        description: "UtiliSee",
         stack: [
-        {
-            logo: 2,
-            title: "Python",
-        },
+            {
+                logo: 0,
+                title: "React",
+            },
+            {
+                logo: 1,
+                title: "Firebase",
+            },
+            {
+                logo: 2,
+                title: "Python",
+            },
+            {
+                logo: 3,
+                title: "NodeJS",
+            },
+            {
+                logo: 4,
+                title: "Vite",
+            },
+            {
+                logo: 6,
+                title: "Flask",
+            },
+            {
+                logo: 8,
+                title: "JavaScript",
+            },
         ],
         live: null,
         yt: null,

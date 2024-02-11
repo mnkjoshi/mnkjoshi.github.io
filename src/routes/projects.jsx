@@ -4,10 +4,9 @@ import MadeWith from "../components/MadeWith.jsx"
 
 import GitHubIcon from "../assets/images/GitHubIcon.png"
 import YouTubeIcon from "../assets/images/YouTubeIcon.png"
+import ProjectData from "../assets/data/ProjectData.js";
 
-const allProjects = {
-    ["names"]:["UtiliSee", "SafetyVision", "WatchDog", "VitaliSee", "WildFire", "LoopCar"],
-}
+let CurrentProject = 0;
 
 function transitionTool(opacity, position, object) {
     object.style.opacity = opacity;
@@ -17,45 +16,33 @@ function transitionTool(opacity, position, object) {
     }
 }   
 
+let ProjectToShow = null;
+
+
+
 export default function Projects() { 
-    //[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, MongoIcon, FlaskIcon, ExpressIcon, JavaScriptIcon, VueIcon]
-    const ProjectToShow = [{
-        stack: [
-        {
-            logo: 0,
-            title: "React",
-        },
-        {
-            logo: 1,
-            title: "Firebase",
-        },
-        {
-            logo: 2,
-            title: "Python",
-        },
-        {
-            logo: 3,
-            title: "NodeJS",
-        },
-        {
-            logo: 4,
-            title: "Vite",
-        },
-        {
-            logo: 6,
-            title: "Flask",
-        },
-        {
-            logo: 8,
-            title: "JavaScript",
-        },
-        ]
-    }] 
+    let ProjectToShow = ProjectData[2];
+    function HandleClick(Where) {
+        console.log(ProjectToShow)
+        if (Where == "yt") {
+            if (ProjectToShow !== null && ProjectToShow.yt !== null) {
+                window.open(ProjectToShow.yt)
+            }
+        } else if (Where == "github") {
+            if (ProjectToShow !== null && ProjectToShow.github !== null) {
+                window.open(ProjectToShow.github)
+            }
+        } else if (Where == "live") {
+            if (ProjectToShow !== null && ProjectToShow.live !== null) {
+                window.open(ProjectToShow.live)
+            }
+        }
+    }
 
     return (
         <div className="projects-main">
             <p className= "projects-title">
-                {"<Project Title>"}
+                {ProjectToShow.title}
             </p>
             
             <div className= "projects-slider">
@@ -84,19 +71,19 @@ export default function Projects() {
             <div className= "projects-info">
                 <div className= "projects-actions">
                     <button className= "projects-git">
-                        <img src = {GitHubIcon} className= "projects-github-icon"/>
+                        <img src = {GitHubIcon} className= "projects-github-icon" onClick={() => HandleClick("github")}/>
                     </button>
 
                     <button className= "projects-yt">
-                        <img src = {YouTubeIcon} className= "projects-yt-icon"/>
+                        <img src = {YouTubeIcon} className= "projects-yt-icon" onClick={() => HandleClick("yt")}/>
                     </button>
 
-                    <button className= "projects-demo">
+                    <button className= "projects-demo" onClick={() => HandleClick("live")}>
                         LIVE
                     </button>
                 </div>
                 <p className= "projects-description">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. In aliquam dignissim risus in auctor. Nam facilisis lectus quis ante tristique, a vehicula nisl pellentesque. Maecenas malesuada risus id lacus consequat, at lacinia mi aliquam. In dignissim orci ac sem rutrum, molestie porttitor mauris venenatis. Donec lobortis ullamcorper metus, ac feugiat lacus facilisis sed. Cras ac nunc non lectus tincidunt fermentum ut et mauris. Donec a nibh elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Mauris sed posuere metus. Duis non nulla a quam pretium congue.
+                    {ProjectToShow.description}
                 </p>
                 <div className= "projects-stack">
                     <p className= "projects-stack-intro">Technologies Used</p>
