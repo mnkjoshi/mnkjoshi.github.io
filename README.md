@@ -34,4 +34,4 @@ npm run build
 
 Feel free to leave any suggestions or improvements!
 
-@mnkjoshi
+Manav Joshi
