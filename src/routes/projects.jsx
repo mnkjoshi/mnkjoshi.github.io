@@ -33,49 +33,99 @@ export default function Projects() {
 
     function displayAlign(listOrder) {
         let display = document.getElementById("proj-disp-" + listOrder);
-        switch (DisplayOrder[listOrder]) {
-            case 1:
-                display.style.opacity = "0";
-                display.style.width = "0";
-                display.style.height = "0";
-                display.style.left = "0%";
-                display.style.top = "25%";
-                display.style.zIndex = "3"
-                break;
-            case 2:
-                display.style.opacity = "0.5";
-                display.style.width = "27%";
-                display.style.height = "30%";
-                display.style.left = "18%";
-                display.style.top = "24%";
-                display.style.zIndex = "4";
-                break;
-            case 3:
-                display.style.opacity = "1";
-                display.style.width = "30%";
-                display.style.height = "35%";
-                display.style.left = "35%";
-                display.style.top = "22%";
-                display.style.zIndex = "5 ";
-                break;
-            case 4:
-                display.style.opacity = "0.5";
-                display.style.width = "27%";
-                display.style.height = "30%";
-                display.style.left = "55%";
-                display.style.top = "24%";
-                display.style.zIndex = "4";
-                break;
-            case 5:
-                display.style.opacity = "0";
-                display.style.width = "0";
-                display.style.height = "0";
-                display.style.left = "100%";
-                display.style.top = "25%";
-                display.style.zIndex = "3"
-                break;
-            default:
-                break;
+        if (window.innerWidth <= 700) { // Mobile
+            switch (DisplayOrder[listOrder]) {
+                case 1:
+                    display.style.opacity = "0";
+                    display.style.width = "0";
+                    display.style.height = "0";
+                    display.style.left = "0%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "3"
+                    break;
+                case 2:
+                    display.style.opacity = "0.5";
+                    display.style.width = "27%";
+                    display.style.height = "17%";
+                    display.style.left = "18%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "4";
+                    display.style.marginTop = "5%";
+                    break;
+                case 3:
+                    display.style.opacity = "1";
+                    display.style.width = "30%";
+                    display.style.height = "20%";
+                    display.style.left = "35%";
+                    display.style.top = "22%";
+                    display.style.zIndex = "5";
+                    display.style.marginTop = "6%";
+                    break;
+                case 4:
+                    display.style.opacity = "0.5";
+                    display.style.width = "27%";
+                    display.style.height = "17%";
+                    display.style.left = "55%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "4";
+                    display.style.marginTop = "5%";
+                    break;
+                case 5:
+                    display.style.opacity = "0";
+                    display.style.width = "0";
+                    display.style.height = "0";
+                    display.style.left = "100%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "3"
+                    break;
+                default:
+                    break;
+            }
+        } else { // PC
+            switch (DisplayOrder[listOrder]) {
+                case 1:
+                    display.style.opacity = "0";
+                    display.style.width = "0";
+                    display.style.height = "0";
+                    display.style.left = "0%";
+                    display.style.top = "25%";
+                    display.style.zIndex = "3"
+                    break;
+                case 2:
+                    display.style.opacity = "0.5";
+                    display.style.width = "27%";
+                    display.style.height = "30%";
+                    display.style.left = "18%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "4";
+                    break;
+                case 3:
+                    display.style.opacity = "1";
+                    display.style.width = "30%";
+                    display.style.height = "35%";
+                    display.style.left = "35%";
+                    display.style.top = "22%";
+                    display.style.zIndex = "5 ";
+                    break;
+                case 4:
+                    display.style.opacity = "0.5";
+                    display.style.width = "27%";
+                    display.style.height = "30%";
+                    display.style.left = "55%";
+                    display.style.top = "24%";
+                    display.style.zIndex = "4";
+                    break;
+                case 5:
+                    display.style.opacity = "0";
+                    display.style.width = "0";
+                    display.style.height = "0";
+                    display.style.left = "100%";
+                    display.style.top = "25%";
+                    display.style.zIndex = "3"
+                    break;
+                default:
+                    break;
+            }
         }
     }
     
