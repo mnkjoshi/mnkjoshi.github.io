@@ -104,7 +104,7 @@ export default function Projects() {
         setCurrent(DisplayIndex[2])
     }
 
-    ProjectToShow = ProjectData[current]
+    ProjectToShow = ProjectData[DisplayIndex[2]]
 
     function HandleClick(Where) {
         if (Where == "yt") {
@@ -122,16 +122,16 @@ export default function Projects() {
         }
     }
 
-    // document.getElementById("proj-img-" +  (0)).src = ProjectDisplays[ProjectData[DisplayIndex[3]].title];
-    console.log(DisplayOrder[0])
-    console.log(DisplayIndex)
-    console.log(ProjectData[DisplayIndex[DisplayOrder[0]-1]].title)
     return (
         <div className="projects-main">
+            <p className= "projects-tagline">
+                {ProjectToShow.tagline}
+            </p>
+
             <p className= "projects-title">
                 {ProjectToShow.title}
             </p>
-            
+
             <div className= "projects-slider">
                 <button className= "projects-toggle proj-tog-1" id= "left-toggle" onClick= {() => switchProject(true)}> 
                     {"<"}

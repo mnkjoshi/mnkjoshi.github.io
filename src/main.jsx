@@ -6,6 +6,10 @@ import './stylesheets/topbar.css'
 import './stylesheets/index.css'  
 import './stylesheets/projects.css'
 import './stylesheets/resume.css'
+import './stylesheets/login.css'
+import './stylesheets/portal.css'
+import './stylesheets/cyber.css'
+import './stylesheets/resources.css'
 
 import "../src/assets/fonts/stylesheet.css"
 

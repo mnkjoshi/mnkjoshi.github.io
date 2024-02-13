@@ -8,6 +8,15 @@
     z-index: 5;
 }
 
+.projects-tagline {
+    color:white;
+    font-size: 15px ;
+    font-weight: 600;
+    font-family: 'Lexend', sans-serif;
+    position: relative;
+    top: 0%;
+}
+
 .projects-title {
     color:white;
     font-size: 60px ;

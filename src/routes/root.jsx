@@ -148,6 +148,11 @@ export default function Root() {
             return
         }
 
+        if (Route == 4 && device == 2) {
+            window.open("https://github.com/mnkjoshi/mnkjoshi.github.io/raw/main/src/assets/data/resume.pdf")
+            return
+        }
+
         let timeToWait = 500;
         if (Route !== 1) { 
             document.getElementById("landing-outlet").style.opacity = 0; 
@@ -226,7 +231,7 @@ export default function Root() {
     
     return (
         <div className= "landing-main" id= "landing-main">
-
+            <p className= "contact-details"> mnjoshi+w@ualberta.ca </p>
             <div className= "landing-central">
                 <p className= "landing-welcome" id= "landing-welcome"></p>
             </div>

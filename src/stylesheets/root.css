@@ -24,6 +24,15 @@ p {
     height: 100%;
 }
 
+.contact-details {
+    position: absolute;
+    bottom: 1%;
+    left: 1%;
+    font-size: 13px;
+    color: white;
+    z-index: 10;
+}
+
 .loading-main {
     position: absolute;
     width: 100%;
