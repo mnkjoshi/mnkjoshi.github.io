@@ -143,6 +143,11 @@ export default function Root() {
             return
         }
 
+        if (Route == -4) {
+            window.open("https://linkedin.com/in/mnkjoshi")
+            return
+        }
+
         let timeToWait = 500;
         if (Route !== 1) { 
             document.getElementById("landing-outlet").style.opacity = 0; 

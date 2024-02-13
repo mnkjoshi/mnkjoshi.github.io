@@ -195,7 +195,8 @@
     border-color: black;
 }
 
-.mobilebar-github {
+.mobilebar-github,
+.mobilebar-linkedin {
     border-width: 2px;
     cursor: pointer;
     background-color: transparent;
@@ -204,7 +205,8 @@
     border: none;
 }
 
-.mobilebar-github-icon {
+.mobilebar-github-icon,
+.mobilebar-linkedin-icon {
     background-color: #ffffff;
     border-radius: 8px;
     transition: 0.3s;
@@ -215,7 +217,8 @@
     border-color: #000E1B;
 }
 
-.mobilebar-github-icon:hover {
+.mobilebar-github-icon:hover,
+.mobilebar-linkedin-icon:hover {
     filter: invert(100%);
     background-color: transparent;
     border-width: 2px;

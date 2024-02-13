@@ -1,4 +1,36 @@
 export default [//[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, MongoIcon, FlaskIcon, ExpressIcon, JavaScriptIcon, VueIcon, ArduinoIcon, CIcon, CppIcon, HardwareIcon]
+    //LoopCar
+    {
+        title: "LoopCar",
+        display: 2,
+        tagline: "AlbertaLoop 2024 Mechatronics Showdown - Top 6",
+        description: "LoopCar embodies the essence of DIY ingenuity, crafted with an Arduino at its heart. This model car seamlessly blends traditional handiwork with modern electronics for a truly unique experience. With soldered connections and Arduino programming, it offers precise control and versatile functionality. Whether you're steering it remotely or letting it navigate autonomously, LoopCar delivers endless possibilities for fun and learning. It's a testament to creativity and skill, inviting enthusiasts of all levels to dive into the exciting world of electronics and engineering.",
+        stack: [
+        {
+            logo: 2,
+            title: "Python",
+        },
+        {
+            logo: 10,
+            title: "Arduino",
+        },
+        {
+            logo: 11,
+            title: "C",
+        },
+        {
+            logo: 12,
+            title: "C++",
+        },
+        {
+            logo: 13,
+            title: "Circuitry",
+        },
+        ],
+        live: null,
+        yt: "https://youtu.be/aEbsAJDjvbE",
+        github: "https://github.com/mnkjoshi/Mechatronics",
+    },
     //SafetyVision
     { 
     title: "SafetyVision",
@@ -74,38 +106,6 @@ export default [//[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, Mo
         live: "https://pro-watchdog.web.app/",
         yt: null,
         github: "https://github.com/mnkjoshi/WatchDog",
-    },
-    //LoopCar
-    {
-        title: "LoopCar",
-        display: 2,
-        tagline: "AlbertaLoop 2024 Mechatronics Showdown - Top 6",
-        description: "LoopCar embodies the essence of DIY ingenuity, crafted with an Arduino at its heart. This model car seamlessly blends traditional handiwork with modern electronics for a truly unique experience. With soldered connections and Arduino programming, it offers precise control and versatile functionality. Whether you're steering it remotely or letting it navigate autonomously, LoopCar delivers endless possibilities for fun and learning. It's a testament to creativity and skill, inviting enthusiasts of all levels to dive into the exciting world of electronics and engineering.",
-        stack: [
-        {
-            logo: 2,
-            title: "Python",
-        },
-        {
-            logo: 10,
-            title: "Arduino",
-        },
-        {
-            logo: 11,
-            title: "C",
-        },
-        {
-            logo: 12,
-            title: "C++",
-        },
-        {
-            logo: 13,
-            title: "Circuitry",
-        },
-        ],
-        live: null,
-        yt: "https://youtu.be/aEbsAJDjvbE",
-        github: "https://github.com/mnkjoshi/Mechatronics",
     },
     //GamEE Lite
     {
