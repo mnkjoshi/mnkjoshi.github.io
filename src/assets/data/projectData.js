@@ -174,7 +174,7 @@ export default [//[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, Mo
     {
         title: "UtiliSee",
         tagline: "Second Place in Sustainable Cities Challenge 2023",
-        description: "UtiliSee",
+        description: "Monitor your water and electricity utilities in realtime! Get AI powered feedback to make your home services usages more affordable and sustainable!",
         stack: [
             {
                 logo: 0,
@@ -204,9 +204,48 @@ export default [//[ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, Mo
                 logo: 8,
                 title: "JavaScript",
             },
+            {
+                logo: 13,
+                title: "Circuitry",
+            },
         ],
         live: null,
         yt: null,
         github: null,
+    },
+    //CitiWatch
+    {
+        title: "CitiWatch",
+        tagline: "First Place in MovEd; Alberta's first Government Run GovTech hackathon",
+        description: "CitiWatch is a safety aggregation tool that allows government agencies like the RCMP and EPS to identify and locate threats to the public safety such as gun violence, knife violence, violent offenders, and resolve situations like amber alerts and BOLO alerts, quicker, faster, and more safely. CitiWatch can run on a system of cameras as low-end as simple ring doorbell cameras to identify threats to public safety. Snapshots of incidents are sent to the central database where police organizations can monitor the images and release them as a safety warning to the general community.",
+        stack: [
+            {
+                logo: 0,
+                title: "React",
+            },
+            {
+                logo: 1,
+                title: "Firebase",
+            },
+            {
+                logo: 3,
+                title: "NodeJS",
+            },
+            {
+                logo: 7,
+                title: "ExpressJS",
+            },
+            {
+                logo: 14,
+                title: "NextJS",
+            },
+            {
+                logo: 8,
+                title: "JavaScript",
+            },
+        ],
+        live: "https://citi-watch.web.app",
+        yt: "https://www.youtube.com/watch?v=vEiPayFn2cE",
+        github: "https://github.com/mnkjoshi/CitiWatch",
     }
 ]

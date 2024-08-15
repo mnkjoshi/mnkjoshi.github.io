@@ -149,7 +149,7 @@ export default function Root() {
         }
 
         if (Route == 4 && device == 2) {
-            window.open("https://github.com/mnkjoshi/mnkjoshi.github.io/raw/main/src/assets/data/resume.pdf")
+            window.open("../../resume.pdf")
             return
         }
 

@@ -12,11 +12,12 @@ import ArduinoIcon from "../assets/images/ArduinoIcon.png"
 import CIcon from "../assets/images/CIcon.png"
 import CppIcon from "../assets/images/CppIcon.png"
 import HardwareIcon from "../assets/images/HardwareIcon.png"
+import NextJSIcon from "../assets/images/NextJSIcon.png"
 
 
 
 export default function MadeWith({ Project }) {
-    const Icons = [ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, MongoIcon, FlaskIcon, ExpressIcon, JavaScriptIcon, VueIcon, ArduinoIcon, CIcon, CppIcon, HardwareIcon]
+    const Icons = [ReactIcon, FirebaseIcon, PythonIcon, NodeJSIcon, Viteicon, MongoIcon, FlaskIcon, ExpressIcon, JavaScriptIcon, VueIcon, ArduinoIcon, CIcon, CppIcon, HardwareIcon, NextJSIcon]
     const listStack = Project.stack.map( tool =>
         <div className= "projects-stack-component" key= {tool.title}>
             <img className= "projects-stack-icon" src= {Icons[tool.logo]} alt= {tool.title}/>

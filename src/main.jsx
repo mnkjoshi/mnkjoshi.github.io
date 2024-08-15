@@ -21,6 +21,7 @@ import Resume from './routes/resume.jsx'
 import Resources from './routes/resources.jsx'
 import Projects from './routes/projects.jsx'
 import Cyber from './routes/cyber.jsx'
+import Gaming from './routes/gaming.jsx'
 
 import {
   createBrowserRouter,
@@ -58,6 +59,11 @@ const router = createBrowserRouter([
         element: <Portal/>
       },
     ]
+  },
+  {
+    path: "/gaming",
+    element: <Gaming/> ,
+    errorElement: <ErrorPage/>,
   },
 ])
 

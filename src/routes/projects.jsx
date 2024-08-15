@@ -12,6 +12,7 @@ import SafetyVision from "../assets/displays/SafetyVision.png"
 import GamEE from "../assets/displays/GamEE.png"
 import WatchDog from "../assets/displays/WatchDog.png"
 import LoopCar from "../assets/displays/LoopCar.jpg"
+import CitiWatch from "../assets/displays/CitiWatch.png"
 
 const ProjectDisplays = {
     ["VitaliSee"]: VitaliSee,
@@ -20,6 +21,7 @@ const ProjectDisplays = {
     ["GamEE Lite"]: GamEE,
     ["WatchDog"]: WatchDog,
     ["LoopCar"]: LoopCar,
+    ["CitiWatch"]: CitiWatch,
 }
 
 import { useState } from "react";
