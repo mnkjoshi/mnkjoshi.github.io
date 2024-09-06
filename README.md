@@ -30,7 +30,7 @@ npm run build
 ```
 
 >[!IMPORTANT]
->Please note that the code in this repo requires permission to re-use in any form. Please contact me on github to ensure you are compliant with the license.
+>is my code no touchy touchy
 
 Feel free to leave any suggestions or improvements!
 
