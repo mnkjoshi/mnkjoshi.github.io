@@ -2,7 +2,7 @@
 **Made with React.js and hosted on Firebase!**
 
 >[!NOTE]
->This website is currently in beta and bugs will be a-plenty! Please report bugs if you find any!
+>This website is currently in development and bugs will be a-plenty! Please report bugs if you find any!
 
 Personal website made with CSS, React, and other frameworks from scratch. It took a number of hours making everything work and look good so I hope you enjoy accessing it.
 
