@@ -1,0 +1,74 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #0b0f19;
+  color: #f8fafc;
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0b0f19;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a202c;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #5eead4;
+}
+
+/* Markdown content styling */
+.prose-custom h1,
+.prose-custom h2,
+.prose-custom h3 {
+  font-family: "Fira Code", monospace;
+  color: #5eead4;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+.prose-custom h1 { font-size: 1.875rem; }
+.prose-custom h2 { font-size: 1.5rem; }
+.prose-custom h3 { font-size: 1.25rem; }
+.prose-custom p { margin-bottom: 1em; line-height: 1.75; }
+.prose-custom a { color: #5eead4; text-decoration: underline; }
+.prose-custom code {
+  font-family: "Fira Code", monospace;
+  background: #1a202c;
+  padding: 0.125rem 0.375rem;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+}
+.prose-custom pre {
+  background: #1a202c;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 1em;
+}
+.prose-custom pre code {
+  background: none;
+  padding: 0;
+}
+.prose-custom ul, .prose-custom ol {
+  padding-left: 1.5em;
+  margin-bottom: 1em;
+}
+.prose-custom li { margin-bottom: 0.25em; }
+.prose-custom blockquote {
+  border-left: 3px solid #5eead4;
+  padding-left: 1rem;
+  color: #94a3b8;
+  margin-bottom: 1em;
+}

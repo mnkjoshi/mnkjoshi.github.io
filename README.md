@@ -1,37 +1,16 @@
-# Manav Joshi
-**Made with React.js and hosted on Firebase!**
+# React + Vite
 
->[!NOTE]
->This website is currently in beta and bugs will be a-plenty! Please report bugs if you find any!
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Personal website made with CSS, React, and other frameworks from scratch. It took a number of hours making everything work and look good so I hope you enjoy accessing it.
+Currently, two official plugins are available:
 
->[!TIP]
->You can access the deployed website at [mnkjoshi.me](https://mnkjoshi.me) or follow the following instructions to build and deploy it yourself.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-Clone the repo locally to your machine:
-```
-git clone https://github.com/mnkjoshi/mnkjoshi.github.io
-```
+## React Compiler
 
-Then install all packages and necessary files with npm:
-```
-npm install
-```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-Once all necessary files are downloaded, you can run the website yourself using npm:
-```
-npm run dev
-```
+## Expanding the ESLint configuration
 
-Alternatively, to deploy and test it elsewhere you can:
-```
-npm run build
-```
-
->[!IMPORTANT]
->Please note that the code in this repo requires permission to re-use in any form. Please contact me on github to ensure you are compliant with the license.
-
-Feel free to leave any suggestions or improvements!
-
-Manav Joshi
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
