@@ -29,6 +29,16 @@ import {
   FiEdit3,
 } from "react-icons/fi";
 
+// ─── Helper: Create URL-safe slug from title ───
+function createSlug(text) {
+  return text
+    .toLowerCase()
+    .trim()
+    .replace(/[^\w\s-]/g, "") // Remove non-word chars except spaces and hyphens
+    .replace(/[\s_]+/g, "-")   // Replace spaces and underscores with hyphens
+    .replace(/^-+|-+$/g, "");   // Remove leading/trailing hyphens
+}
+
 // ─── Styles ───
 const inputCls =
   "w-full bg-obsidian border border-white/[0.1] focus:border-cyber/60 rounded-lg px-3 py-2 text-xs outline-none transition-colors text-text_primary placeholder:text-text_muted/50";
@@ -156,15 +166,12 @@ function CrudSection({
   }
 
   async function handleImageUpload(key, file) {
-    console.log("handleImageUpload called:", { key, file, collectionName });
     if (!file) return;
     setUploading((prev) => ({ ...prev, [key]: true }));
     try {
       const url = await uploadImage(file, collectionName);
-      console.log("Upload successful, URL:", url);
       handleChange(key, url);
     } catch (err) {
-      console.error("Upload error:", err);
       alert("Image upload failed: " + err.message);
     } finally {
       setUploading((prev) => ({ ...prev, [key]: false }));
@@ -291,7 +298,18 @@ function CrudSection({
       if (editingId) {
         await updateDocument(collectionName, editingId, prepared);
       } else {
-        await addDocument(collectionName, prepared);
+        // Generate custom ID from title/name field for projects and hackathons
+        let customId = null;
+        const titleField = prepared.title || prepared.name;
+        if (titleField && collectionName === "projects") {
+          customId = createSlug(titleField);
+        } else if (titleField && collectionName === "hackathons") {
+          // For hackathons, append year from date field
+          const slug = createSlug(titleField);
+          const year = prepared.date ? new Date(prepared.date.toDate()).getFullYear() : new Date().getFullYear();
+          customId = `${slug}-${year}`;
+        }
+        await addDocument(collectionName, prepared, customId);
       }
       resetForm();
       refetch();

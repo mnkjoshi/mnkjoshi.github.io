@@ -15,8 +15,6 @@ const UPLOAD_URL = `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`;
  * @returns {Promise<string>} The public URL of the uploaded image.
  */
 export async function uploadImage(file, folder = "mnkjoshi") {
-  console.log("Cloudinary Config:", { CLOUD_NAME, UPLOAD_PRESET, UPLOAD_URL });
-  
   const body = new FormData();
   body.append("file", file);
   body.append("upload_preset", UPLOAD_PRESET);

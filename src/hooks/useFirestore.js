@@ -7,6 +7,7 @@ import {
   query,
   orderBy,
   addDoc,
+  setDoc,
   updateDoc,
   deleteDoc,
   serverTimestamp,
@@ -110,7 +111,15 @@ export function useDocument(collectionName, docId) {
 }
 
 // ---------- CRUD helpers ----------
-export async function addDocument(collectionName, data) {
+export async function addDocument(collectionName, data, customId = null) {
+  if (customId) {
+    // Use custom ID with setDoc
+    return setDoc(doc(db, collectionName, customId), {
+      ...data,
+      createdAt: serverTimestamp(),
+    });
+  }
+  // Auto-generate ID with addDoc
   return addDoc(collection(db, collectionName), {
     ...data,
     createdAt: serverTimestamp(),
