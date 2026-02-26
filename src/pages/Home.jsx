@@ -275,14 +275,14 @@ export default function Home() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4 }}
-          className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.04] rounded-2xl p-5 flex justify-center overflow-x-auto"
+          className="bg-white/[0.02] backdrop-blur-sm border border-white/[0.04] rounded-2xl p-8 flex justify-center overflow-x-auto"
         >
           <GitHubCalendar
             username="mnkjoshi"
             colorScheme="dark"
-            blockSize={11}
-            blockMargin={4}
-            fontSize={12}
+            blockSize={14}
+            blockMargin={5}
+            fontSize={14}
             theme={{
               dark: ["#1A202C", "#134e4a", "#0d9488", "#5eead4", "#a7f3d0"],
             }}

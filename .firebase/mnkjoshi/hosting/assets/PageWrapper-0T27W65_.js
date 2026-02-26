@@ -1,0 +1,1 @@
+import{j as i,m as o}from"./vendor-amCHreqW.js";function s({children:a,className:t=""}){return i.jsx(o.div,{initial:{opacity:0,y:20},animate:{opacity:1,y:0},exit:{opacity:0,y:-20},transition:{duration:.35,ease:"easeOut"},className:`max-w-6xl mx-auto px-6 py-10 ${t}`,children:a})}export{s as P};

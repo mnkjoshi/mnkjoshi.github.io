@@ -156,12 +156,15 @@ function CrudSection({
   }
 
   async function handleImageUpload(key, file) {
+    console.log("handleImageUpload called:", { key, file, collectionName });
     if (!file) return;
     setUploading((prev) => ({ ...prev, [key]: true }));
     try {
       const url = await uploadImage(file, collectionName);
+      console.log("Upload successful, URL:", url);
       handleChange(key, url);
     } catch (err) {
+      console.error("Upload error:", err);
       alert("Image upload failed: " + err.message);
     } finally {
       setUploading((prev) => ({ ...prev, [key]: false }));
