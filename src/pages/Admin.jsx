@@ -8,6 +8,7 @@ import { useAuth } from "../context/AuthContext";
 import PageWrapper from "../components/PageWrapper";
 import SectionHeading from "../components/SectionHeading";
 import Loader from "../components/Loader";
+import StatisticsDashboard from "../components/StatisticsDashboard";
 import { useCollection } from "../hooks/useFirestore";
 import {
   addDocument,
@@ -773,9 +774,16 @@ const TABS = [
 // ──────────── Admin Page ────────────
 export default function Admin() {
   const { user, loading } = useAuth();
+  const [showStatistics, setShowStatistics] = useState(() => {
+    return localStorage.getItem("admin_show_statistics") === "true";
+  });
   const [activeTab, setActiveTab] = useState(() => {
     return localStorage.getItem("admin_active_tab") || "projects";
   });
+
+  useEffect(() => {
+    localStorage.setItem("admin_show_statistics", showStatistics.toString());
+  }, [showStatistics]);
 
   useEffect(() => {
     localStorage.setItem("admin_active_tab", activeTab);
@@ -791,33 +799,66 @@ export default function Admin() {
           title="Admin"
           subtitle={user.email}
         />
-        <button
-          onClick={() => signOut(auth)}
-          className="border border-red-400/40 text-red-400/70 rounded-lg px-3 py-1.5 text-[11px] font-fira hover:bg-red-400/10 hover:text-red-400 transition-colors"
-        >
-          Sign Out
-        </button>
-      </div>
-
-      {/* ─── Tabs ─── */}
-      <div className="flex gap-1 mb-8 p-1 bg-white/[0.03] border border-white/[0.08] rounded-xl overflow-x-auto">
-        {TABS.map((tab) => (
+        <div className="flex items-center gap-2">
+          {/* Content/Statistics Toggle */}
+          <div className="flex items-center gap-1 bg-white/[0.03] border border-white/[0.08] rounded-lg p-1">
+            <button
+              onClick={() => setShowStatistics(false)}
+              className={`px-3 py-1.5 rounded-md text-[11px] font-fira font-medium transition-all ${
+                !showStatistics
+                  ? "bg-cyber/15 text-cyber"
+                  : "text-text_muted hover:text-text_primary"
+              }`}
+            >
+              Content
+            </button>
+            <button
+              onClick={() => setShowStatistics(true)}
+              className={`px-3 py-1.5 rounded-md text-[11px] font-fira font-medium transition-all ${
+                showStatistics
+                  ? "bg-cyber/15 text-cyber"
+                  : "text-text_muted hover:text-text_primary"
+              }`}
+            >
+              Statistics
+            </button>
+          </div>
+          
+          {/* Sign Out */}
           <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`px-4 py-2 rounded-lg text-xs font-fira font-medium transition-all whitespace-nowrap ${
-              activeTab === tab.key
-                ? "bg-cyber/15 text-cyber border border-cyber/30"
-                : "text-text_muted hover:text-text_primary border border-transparent hover:bg-white/[0.03]"
-            }`}
+            onClick={() => signOut(auth)}
+            className="border border-red-400/40 text-red-400/70 rounded-lg px-3 py-1.5 text-[11px] font-fira hover:bg-red-400/10 hover:text-red-400 transition-colors"
           >
-            {tab.label}
+            Sign Out
           </button>
-        ))}
+        </div>
       </div>
 
-      {/* ─── Active Section ─── */}
-      {activeTab === "projects" && (
+      {/* ─── Statistics View ─── */}
+      {showStatistics && <StatisticsDashboard />}
+
+      {/* ─── Content Management View ─── */}
+      {!showStatistics && (
+        <>
+          {/* ─── Tabs ─── */}
+          <div className="flex gap-1 mb-8 p-1 bg-white/[0.03] border border-white/[0.08] rounded-xl overflow-x-auto">
+            {TABS.map((tab) => (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`px-4 py-2 rounded-lg text-xs font-fira font-medium transition-all whitespace-nowrap ${
+                  activeTab === tab.key
+                    ? "bg-cyber/15 text-cyber border border-cyber/30"
+                    : "text-text_muted hover:text-text_primary border border-transparent hover:bg-white/[0.03]"
+                }`}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* ─── Active Section ─── */}
+          {activeTab === "projects" && (
         <CrudSection
           title="Projects"
           collectionName="projects"
@@ -940,6 +981,8 @@ export default function Admin() {
             },
           ]}
         />
+      )}
+        </>
       )}
     </PageWrapper>
   );

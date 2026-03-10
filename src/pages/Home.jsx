@@ -9,6 +9,7 @@ import HackathonCard from "../components/HackathonCard";
 import BlogCard from "../components/BlogCard";
 import Loader from "../components/Loader";
 import { useCollection } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 const stagger = {
   hidden: {},
@@ -20,6 +21,7 @@ const fadeUp = {
 };
 
 export default function Home() {
+  usePageTracking("Home");
   const { data: projects, loading: pLoad } = useCollection("projects");
   const { data: hackathons, loading: hLoad } = useCollection("hackathons", "date");
   const { data: blogs, loading: bLoad } = useCollection("blogs", "date");

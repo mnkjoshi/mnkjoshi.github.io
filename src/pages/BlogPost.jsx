@@ -5,10 +5,12 @@ import remarkGfm from "remark-gfm";
 import PageWrapper from "../components/PageWrapper";
 import Loader from "../components/Loader";
 import { useDocument } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 export default function BlogPost() {
   const { id } = useParams();
   const { data: post, loading } = useDocument("blogs", id);
+  usePageTracking(`Blog: ${post?.title || id}`, { blogId: id });
 
   if (loading) return <Loader />;
   if (!post)

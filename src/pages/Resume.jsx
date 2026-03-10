@@ -5,6 +5,7 @@ import SectionHeading from "../components/SectionHeading";
 import Loader from "../components/Loader";
 import { useCollection } from "../hooks/useFirestore";
 import { resumeData } from "../data/dummy";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 const stagger = {
   hidden: {},
@@ -114,6 +115,7 @@ function SkillCategory({ label, items }) {
 }
 
 export default function Resume() {
+  usePageTracking("Resume");
   const { data: experiences, loading: expLoading } = useCollection("experiences", "startDate");
   const { data: leadership, loading: leadLoading } = useCollection("leadership", "startDate");
   const loading = expLoading || leadLoading;

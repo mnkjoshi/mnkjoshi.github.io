@@ -4,6 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import HackathonCard from "../components/HackathonCard";
 import Loader from "../components/Loader";
 import { useCollection } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 const container = {
   hidden: {},
@@ -15,6 +16,7 @@ const item = {
 };
 
 export default function Hackathons() {
+  usePageTracking("Hackathons");
   const { data: hackathons, loading } = useCollection("hackathons", "date");
 
   const won = hackathons.filter((h) => h.isWinner).length;

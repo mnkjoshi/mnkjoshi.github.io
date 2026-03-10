@@ -4,6 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import ProjectCard from "../components/ProjectCard";
 import Loader from "../components/Loader";
 import { useCollection } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 const stagger = {
   hidden: {},
@@ -15,6 +16,7 @@ const fadeUp = {
 };
 
 export default function Projects() {
+  usePageTracking("Projects");
   const { data: projects, loading } = useCollection("projects");
 
   return (

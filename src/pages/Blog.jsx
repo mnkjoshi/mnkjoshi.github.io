@@ -4,6 +4,7 @@ import SectionHeading from "../components/SectionHeading";
 import BlogCard from "../components/BlogCard";
 import Loader from "../components/Loader";
 import { useCollection } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 const container = {
   hidden: {},
@@ -15,6 +16,7 @@ const item = {
 };
 
 export default function Blog() {
+  usePageTracking("Blog");
   const { data: blogs, loading } = useCollection("blogs", "date");
 
   return (

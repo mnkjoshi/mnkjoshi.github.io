@@ -5,10 +5,12 @@ import PageWrapper from "../components/PageWrapper";
 import StackTag from "../components/StackTag";
 import Loader from "../components/Loader";
 import { useDocument } from "../hooks/useFirestore";
+import { usePageTracking } from "../hooks/useAnalytics";
 
 export default function ProjectDetail() {
   const { id } = useParams();
   const { data: project, loading } = useDocument("projects", id);
+  usePageTracking(`Project: ${project?.title || id}`, { projectId: id });
 
   if (loading) return <Loader />;
   if (!project)
