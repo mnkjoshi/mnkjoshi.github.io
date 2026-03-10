@@ -10,7 +10,7 @@ import { usePageTracking } from "../hooks/useAnalytics";
 export default function ProjectDetail() {
   const { id } = useParams();
   const { data: project, loading } = useDocument("projects", id);
-  usePageTracking(`Project: ${project?.title || id}`, { projectId: id });
+  usePageTracking(project?.title ? `Project: ${project.title}` : null, { projectId: id });
 
   if (loading) return <Loader />;
   if (!project)

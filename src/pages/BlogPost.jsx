@@ -10,7 +10,7 @@ import { usePageTracking } from "../hooks/useAnalytics";
 export default function BlogPost() {
   const { id } = useParams();
   const { data: post, loading } = useDocument("blogs", id);
-  usePageTracking(`Blog: ${post?.title || id}`, { blogId: id });
+  usePageTracking(post?.title ? `Blog: ${post.title}` : null, { blogId: id });
 
   if (loading) return <Loader />;
   if (!post)
